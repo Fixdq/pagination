@@ -4,6 +4,15 @@
 # @Author  : fixdq
 # @File    : utils.py
 # @Software: PyCharm
+"""
+使用方式：
+    # 查询所有书籍
+        data = models.Book.objects.all()
+        page_current = request.GET.get('page')
+        page_obj = utils.Pagination(page_current, data.count(), '/book_list/')
+        data_list = data[page_obj.start: page_obj.end]
+        return render(request, 'index.html', {'book_list': data_list, 'page_obj':page_obj})
+"""
 
 
 class Pagination(object):
@@ -15,14 +24,6 @@ class Pagination(object):
         :param base_url: 显示数据的url
         :param page_show_num: 每页显示多少数据 默认是10条
         :param page_index_show_num: 菜单页显示的个数
-
-        使用方式：
-            # 查询所有书籍
-            data = models.Book.objects.all()
-            page_current = request.GET.get('page')
-            pag_obj = utils.pagination(page_current, data.count(), '/book_list/')
-            data_list = data[pag_obj.start: pag_obj.end]
-            return render(request, 'book_list.html', {'book_list': data_list, 'li_data': pag_obj.page_html()})
 
         """
         # 获取显示的页码
@@ -49,7 +50,7 @@ class Pagination(object):
 
     @property
     def end(self):
-        return self.page_current * self.page_show_num+1
+        return self.page_current * self.page_show_num + 1
 
     def page_html(self):
 
@@ -65,7 +66,11 @@ class Pagination(object):
 
         # 定义存储li的列表
         li_list = []
-
+        # 添加前面的nav和ul标签
+        li_list.append("""
+                <nav aria-label="Page navigation">
+                <ul class="pagination">
+            """)
         # 添加首页
         li_list.append('<li><a href="{base_url}?page=1">首页</a></li>'.format(base_url=self.base_url))
         # 添加上一页
@@ -96,5 +101,9 @@ class Pagination(object):
         # 添加尾页
         li_list.append(
             '<li><a href="{base_url}?page={page}">尾页</a></li>'.format(page=self.page_total, base_url=self.base_url))
-
+        # 添加nav和ul的结尾
+        li_list.append("""
+                     </ul>
+                 </nav>
+                 """)
         return ''.join(li_list)

@@ -18,8 +18,5 @@ from django.contrib import admin
 from pagination import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^book_list/', views.book_list),
-    url(r'^login/', views.login),
-    url(r'^logout/', views.logout),
-    url(r'^index/', views.index),
+    url(r'^$', views.index),
 ]

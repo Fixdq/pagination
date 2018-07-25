@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>主页</title>
+    <title>图书列表</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
-    <p>登录成功</p>
+<div class="container">
+    <h1>书籍列表</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>书名</th>
+            <th>发布日期</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in book_list %}
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.publisher_date|date:'Y-m-d' }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ page_obj.page_html|safe }}
+</div>
 </body>
 </html>

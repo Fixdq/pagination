@@ -11,7 +11,3 @@ if __name__ == '__main__':
     # 1.创建1000个对象
     data = [models.Book(title="书籍--{}".format(i)) for i in range(1000)]
     models.Book.objects.bulk_create(data)
-
-    # 1.创建1000个对象
-    data = [models.Publisher(name="出版社--{}".format(i)) for i in range(1000)]
-    models.Publisher.objects.bulk_create(data)
