@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from pagination import models
-from utils import page
+from utils import page2
 
 
 def index(request):
