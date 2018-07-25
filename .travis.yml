@@ -1,0 +1,23 @@
+language: python
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE="travis_test.travis_settings"
+branches:
+  only:
+      - master
+install:
+  - pip install -r travis_test/requirements.txt
+  - pip install python-coveralls
+  - pip install coverage
+before_script:
+  - python manage.py makemigrations
+  - python manage.py migrate
+# command to run tests
+script:
+  - coverage run manage.py test
+after_success:
+  - coveralls

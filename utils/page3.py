@@ -107,7 +107,7 @@ class Pagination(object):
                 temp = '<li class="active"><a href="?page=%s">%s</a></li>' % (i, i,)
             else:
 
-                temp = '<li><a href="?page=%s">%s</a></li>' % (self.params.urlencode(), i,)
+                temp = '<li><a href="?%s">%s</a></li>' % (self.params.urlencode(), i,)
             page_html_list.append(temp)
 
         if self.current_page >= self.all_pager:
