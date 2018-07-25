@@ -1,0 +1,11 @@
+[run]
+source = .
+include = *.py
+omit =
+    *migrations*
+    *tests*
+    *.html
+    *apps*
+    *utils*
+    *travis_test*
+    *settings.py*
