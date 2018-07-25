@@ -24,7 +24,7 @@ class Pagination(object):
         :param current_page: 当前页
         :param all_count:    数据库中的数据总条数
         :param per_page_num: 每页显示的数据条数
-        :param params:       request请求对象
+        :param params:       request.GET QueryDict对象
         :param pager_count:  最多显示的页码个数
         """
 
@@ -49,7 +49,9 @@ class Pagination(object):
 
         self.pager_count = pager_count
         self.pager_count_half = int((pager_count - 1) / 2)  # 5
-        self.params = params
+        # 深copy 新的querydict 可以修改
+        import copy
+        self.params = copy.deepcopy(params)
 
     @property
     def start(self):
