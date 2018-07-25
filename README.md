@@ -1,0 +1,7 @@
+https://travis-ci.com/Fixdq/Pagination.svg?branch=master
+
+[![Build Status](https://travis-ci.org/Fixdq/Pagination.svg?branch=master)](https://travis-ci.org/Fixdq/Pagination)
+[![Coverage Status](https://coveralls.io/repos/github/Fixdq/Pagination/badge.svg?branch=master)](https://coveralls.io/github/Fixdq/Pagination?branch=master)
+[![Requirements Status](https://requires.io/github/Fixdq/Pagination/requirements.svg?branch=master)](https://requires.io/github/Fixdq/Pagination/requirements/?branch=master)
+[![python3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg)]()
+[![django1.11](https://img.shields.io/badge/django-2.0-brightgreen.svg)]()
