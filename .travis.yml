@@ -4,8 +4,7 @@ python:
   - "3.5"
   - "3.6"
 env:
-  global:
-    - DJANGO_SETTINGS_MODULE="travis_test.travis_settings"
+  - DJANGO_VERSION=1.11.13
 branches:
   only:
       - master
