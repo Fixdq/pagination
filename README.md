@@ -12,7 +12,6 @@
 
 ![avatar][pagination]
 
-If you like to welcome start or fork.
 
 
 
