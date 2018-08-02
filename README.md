@@ -6,3 +6,14 @@
 [![python3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg)]()
 [![django1.11](https://img.shields.io/badge/django-1.11-brightgreen.svg)]()
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
+
+## Look at the picture effect
+
+![avatar][pagination]
+
+If you like to welcome start or fork.
+
+
+
+[pagination]: https://github.com/Fixdq/markdown-resource/blob/master/pagination/pagination.png
